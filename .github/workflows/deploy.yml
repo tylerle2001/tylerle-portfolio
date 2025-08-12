@@ -23,11 +23,33 @@ jobs:
         with:
           node-version: "20"
 
+      - name: Print node/npm versions
+        run: |
+          node -v
+          npm -v
+
       - name: Install deps
         run: npm install
 
-      - name: Build & Export static site
-        run: npm run build && npm run export
+      - name: Show project files (sanity check)
+        run: |
+          ls -la
+          echo "----"
+          cat package.json
+          echo "----"
+          cat next.config.js || true
+          echo "----"
+          ls -la app || true
+          ls -la components || true
+
+      - name: Build
+        run: npm run build
+
+      - name: Export static site
+        run: npm run export
+
+      - name: Verify export folder exists
+        run: ls -la out
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
@@ -36,6 +58,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
+
 
   deploy:
     needs: build
