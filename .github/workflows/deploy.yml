@@ -23,32 +23,13 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Print node/npm versions
-        run: |
-          node -v
-          npm -v
-
       - name: Install deps
         run: npm install
 
-      - name: Show project files (sanity check)
-        run: |
-          ls -la
-          echo "----"
-          cat package.json
-          echo "----"
-          cat next.config.js || true
-          echo "----"
-          ls -la app || true
-          ls -la components || true
-
-      - name: Build
+      - name: Build (Next.js outputs static site to ./out when output: export is set)
         run: npm run build
 
-      - name: Export static site
-        run: npm run export
-
-      - name: Verify export folder exists
+      - name: Verify out folder exists
         run: ls -la out
 
       - name: Configure Pages
@@ -59,7 +40,6 @@ jobs:
         with:
           path: ./out
 
-
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -67,3 +47,4 @@ jobs:
       name: github-pages
     steps:
       - uses: actions/deploy-pages@v4
+
