@@ -36,6 +36,7 @@ export default function HomePage() {
 
       <section className="mb-10">
         <h2 className="text-2xl font-semibold mb-4">Experience</h2>
+
         <ExperienceCard
           role="Consultant"
           company="Vindelici Advisors"
@@ -44,28 +45,46 @@ export default function HomePage() {
             "Facilitate market entry for domestic and international firms by establishing legal entities, coordinating operations set-up, and fostering strategic partnerships to support growth and competitive positioning.",
             "Support M&A projects by developing presentation materials, organizing outreach to PE/VC groups, and managing due diligence analysis, contributing to a $100M fundraising target across all projects.",
             "Mentor and lead interns by overseeing task assignments and weekly check-ins to ensure alignment with project goals."
-          
           ]}
+        />
+
+        <ExperienceCard
           role="Strategic Consulting Intern"
           company="Vindelici Advisors"
           period="September 2022 — May 2023"
           details={[
-            "Consulted for a robotics firm by conducting employee interviews to identify process bottlenecks, refining process maps, and implementing profitability metrics to achieve targeted outcomes."
-            "Generated and aligned PE/VC investor lists with client profiles for M&A outreach" 
+            "Consulted for a robotics firm by conducting employee interviews to identify process bottlenecks, refining process maps, and implementing profitability metrics to achieve targeted outcomes.",
+            "Generated and aligned PE/VC investor lists with client profiles for M&A outreach."
           ]}
         />
       </section>
 
       <section>
         <h2 className="text-2xl font-semibold mb-4">Contact</h2>
-        <p>Email: <a href="mailto:tyler.le2001@Outlook.com" className="text-blue-600">tylerle@example.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/tylerxle" target="_blank" className="text-blue-600">linkedin.com/in/tylerle</a></p>
+        <p>
+          Email:{" "}
+          <a href="mailto:tyler.le2001@Outlook.com" className="text-blue-600">
+            tyler.le2001@Outlook.com
+          </a>
+        </p>
+        <p>
+          LinkedIn:{" "}
+          <a
+            href="https://www.linkedin.com/in/tylerxle"
+            target="_blank"
+            rel="noreferrer"
+            className="text-blue-600"
+          >
+            linkedin.com/in/tylerxle
+          </a>
+        </p>
       </section>
 
       <Footer />
     </main>
   );
 }
+
  
 
 
