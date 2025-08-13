@@ -3,20 +3,14 @@ interface ProjectCardProps {
   description: string;
   link?: string;
 }
-
 export default function ProjectCard({ title, description, link }: ProjectCardProps) {
   return (
-    <div className="border rounded-lg p-4 shadow-sm hover:shadow-md transition">
+    <div className="card hover:shadow-[0_0_0_1px_rgba(255,255,255,0.06)] transition">
       <h3 className="text-xl font-semibold mb-2">{title}</h3>
-      <p className="text-gray-700 mb-3">{description}</p>
+      <p className="muted mb-3">{description}</p>
       {link && (
-        <a
-          href={link}
-          target="_blank"
-          className="text-blue-600 hover:underline"
-          rel="noreferrer"
-        >
-          View Project
+        <a href={link} target="_blank" rel="noreferrer">
+          View Project →
         </a>
       )}
     </div>

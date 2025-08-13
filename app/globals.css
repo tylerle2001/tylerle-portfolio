@@ -2,37 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Force dark theme globally */
+:root { color-scheme: dark; }
+
+html, body { height: 100%; }
 body {
-  @apply bg-white text-gray-900;
-}
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Light polish */
-:root { color-scheme: light; }
-
-/* Subtle background + nicer default text color */
-body {
-  @apply bg-gradient-to-b from-white to-slate-50 text-slate-900;
+  @apply bg-black text-white antialiased;
 }
 
-/* Headings: tighter tracking + clearer hierarchy */
-@layer base {
-  h1 { @apply tracking-tight; }
-  h2, h3 { @apply tracking-tight text-slate-900; }
-}
+/* Links */
+a { @apply text-cyan-400 hover:text-cyan-300 underline-offset-4 hover:underline; }
 
-/* Reusable bits */
+/* Reusable UI bits */
 @layer components {
-  .card { @apply border border-slate-200 bg-white rounded-2xl p-4 shadow-sm; }
-  .btn  { @apply inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-medium transition; }
-  .btn-primary { @apply btn bg-slate-900 text-white hover:opacity-90; }
-  .btn-ghost   { @apply btn border border-slate-300 text-slate-900 hover:bg-slate-50; }
-  .section { @apply mb-10; }
-}
-
-/* Nicer link styling everywhere */
-@layer utilities {
-  .link { @apply text-blue-600 underline underline-offset-4 hover:opacity-80; }
+  .card { @apply bg-neutral-900 border border-neutral-800 rounded-2xl p-6; }
+  .muted { @apply text-neutral-300; }
+  .section { @apply mb-16; }
 }

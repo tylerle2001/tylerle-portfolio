@@ -4,16 +4,15 @@ interface ExperienceCardProps {
   period: string;
   details: string[];
 }
-
 export default function ExperienceCard({ role, company, period, details }: ExperienceCardProps) {
   return (
-    <div className="border rounded-lg p-4 shadow-sm mb-4">
-      <h3 className="text-lg font-bold">{role} — {company}</h3>
-      <p className="text-gray-500 mb-2">{period}</p>
-      <ul className="list-disc ml-6 text-gray-700">
-        {details.map((detail, i) => (
-          <li key={i}>{detail}</li>
-        ))}
+    <div className="card">
+      <div className="flex items-center justify-between gap-4">
+        <h3 className="text-lg font-semibold">{role} — {company}</h3>
+        <span className="text-xs text-neutral-400">{period}</span>
+      </div>
+      <ul className="mt-3 list-disc pl-5 text-neutral-300 space-y-2">
+        {details.map((d, i) => <li key={i}>{d}</li>)}
       </ul>
     </div>
   );
